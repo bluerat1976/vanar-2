@@ -24,6 +24,6 @@ class Person {
 
 let p = new Person()
 
-p.name = 'Tania  '
+p.name = 'Tania'
 
  alert(p.name)
