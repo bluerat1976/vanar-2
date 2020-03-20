@@ -33,3 +33,6 @@ let p1 = new Person('Tania');
 
 p1.name = 123
 alert(this.name)
+
+ 
+
