@@ -3,3 +3,11 @@
     height: 200px;
     background-color: #ebeb87;
 }
+
+#boxcouter {
+    display: inline-block;
+    width: 300px;
+    height: 100px;
+    background-color: #65abec;
+    border: 1px solid #64642f;
+}

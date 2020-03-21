@@ -9,8 +9,6 @@ div.appendChild(btn)
 btn.addEventListener('click', addCounter)
 
 
-
-
 class Expenses {
 
     constructor() {
@@ -35,18 +33,46 @@ class Expenses {
 
 }   
 
+let boxCount = document.createElement('div')
 
-  function addCounter() {
+function addCounter() {
+    
+    
+    boxCount.setAttribute('id', 'boxcouter')
+    document.body.appendChild(boxCount)
+    
 
-    let p1 = new Expenses();
+    let btnAdd = document.createElement('button')
+    btnAdd.setAttribute = ('id', 'btnadd')
+    btnAdd.innerHTML = 'Add ammount'
+    boxCount.appendChild(btnAdd)
+    btnAdd.addEventListener('click', addData)
+
+    let btnSum = document.createElement('button')
+    btnSum.setAttribute('id', 'btnsum')
+    btnSum.innerHTML = 'Summa'
+    boxCount.appendChild(btnSum)
+
+    let btnAddTotal = document.createElement('button')
+    btnAddTotal.setAttribute('id', 'btnaddtotal')
+    btnAddTotal.innerHTML = 'Add sum to total'
+    boxCount.appendChild(btnAddTotal)
+
+function addData() {
+         let p1 = new Expenses();
     //let p2 = new Expenses()
     let divRes = document.getElementById('box-2')
     div.appendChild(divRes)
     divRes.innerHTML = p1.__name + ' ' + p1.number
     // + ', ' + p2.__name + p2.number
 
-    }
+}
+   
+   
+}
     
+    
+
     
 
 
