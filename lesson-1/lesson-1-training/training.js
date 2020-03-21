@@ -6,30 +6,23 @@ let btn = document.createElement('button')
 btn.setAttribute('id', 'butn')
 btn.innerHTML = 'Add counter'
 div.appendChild(btn)
-btn.addEventListener('click', addAmm)
-
-function addAmm() {
-    let p1 = new Person('Tania');
-    let p2 = new Person('Misha')
-    let divRes = document.getElementById('box-2')
-div.appendChild(divRes)
-divRes.innerHTML = p1.name + ' ' + p2.info
-
-}
+btn.addEventListener('click', addCounter)
 
 
-class Person {
-    constructor(name = 'Unknown') {
-        this.name = name;
+
+
+class Expenses {
+
+    constructor() {
+        this.__name = prompt('input name');
         this.number = parseInt(prompt('input number'));
-        this.__age = 34;
-        this.info = prompt('input info');
+
     }
 
-    set age(value) {
+    set name(value) {
        
-        if(value >=1 && value <=200) {
-             this.__age = value
+        if(value = string) {
+             this.__name = value
             
         } else {
             alert('wrong number')
@@ -37,22 +30,24 @@ class Person {
     }
 
     get age() {
-        return this.__age;
+        return this.__name;
     }
 
+}   
+
+
+  function addCounter() {
+
+    let p1 = new Expenses();
+    //let p2 = new Expenses()
+    let divRes = document.getElementById('box-2')
+    div.appendChild(divRes)
+    divRes.innerHTML = p1.__name + ' ' + p1.number
+    // + ', ' + p2.__name + p2.number
+
+    }
     
-    sayHello() {
-        console.log(`Hello, my name is ${this.name}` )
-        if(this.name = String && this.name.value >3 ) {
-            
-        } else {
-            alert('wrong datas')
-        }
-    }
-}
-
-
-
+    
 
 
  
