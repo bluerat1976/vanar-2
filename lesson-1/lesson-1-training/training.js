@@ -27,7 +27,7 @@ class Expenses {
         }
     }
 
-    get age() {
+    get name() {
         return this.__name;
     }
 
@@ -37,17 +37,7 @@ let boxCount = document.createElement('div')
 
 function addCounter() {
     
-    
-    boxCount.setAttribute('id', 'boxcouter')
-    document.body.appendChild(boxCount)
-    
-
-    let btnAdd = document.createElement('button')
-    btnAdd.setAttribute = ('id', 'btnadd')
-    btnAdd.innerHTML = 'Add ammount'
-    boxCount.appendChild(btnAdd)
-    btnAdd.addEventListener('click', addData)
-
+    weight
     let btnSum = document.createElement('button')
     btnSum.setAttribute('id', 'btnsum')
     btnSum.innerHTML = 'Summa'

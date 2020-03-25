@@ -5,14 +5,14 @@
 // Super class
 class Fruit {
     constructor(weight) {
-        this.__weight = 200//gramms 
+        this.__weight = weight//gramms 
     }
 
     set weight(value) {
-        if(value > 0) {
-            this.__weight = value  
+        if(value < 0) {
+            console.error('Error: wrong data')   
         } else {
-            console.error('Error: wrong data')
+            this.__weight = value  
         }
     }
 
@@ -21,14 +21,18 @@ class Fruit {
     }
 
     info() {
-       console.log(`This is a fruit \n ${this.__weight} g`)
+        if(this.__weight) {
+            console.log(`This is a fruit \n ${this.weight} g`)
+            } else {
+            console.log('This is a fruit with wrong weight')
+        }
     }
 }
 
 // Extended classes
 
 class Apple extends Fruit {
-    constructor(weight, color) {
+    constructor( color, weight) {
         //this.weight = weight 
         super(weight)
         this.color = color
@@ -42,7 +46,7 @@ class Apple extends Fruit {
 
 
 class Orange extends Fruit {
-    constructor(weight, color, diametr) {
+    constructor(color, diametr, weight) {
         super(weight)
          this.color = color
          this.diametr = diametr // cm
@@ -58,6 +62,10 @@ class Orange extends Fruit {
 // OBJECTS
 
 let f = new Fruit()
-let a = new Apple('Green')
-let or = new Orange(230, 'orange', 180)
+f.weight = 100
 
+let a = new Apple('Green')
+a.weight = 180
+
+let or = new Orange('orange', 180)
+or.weight = 240
