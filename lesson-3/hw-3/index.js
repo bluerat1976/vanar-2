@@ -1,62 +1,74 @@
 
 class Button  {
-    constructor() {
+    constructor(btn) {
+        this.btn = btn
         this.btn = document.createElement('button')
-        //this.btn.className = 'button'
         this.btn.type = 'submit'
-        this.btn.style.bgColor = '#cccccc'
-        this.btn.value = 'click'
-        this.btn.style.margin = '10px'
-        //this.btn.style.width = '50px'
-        //this.btn.style.height = '30px'
-        
-}
+        this.btn.style.margin = '10px'  
+    }
     
-    render(parent) {
-      parent.appendChild(this.btn)
+    render(body) {
+      body.appendChild(this.btn)
     }
 }
-
 
 class LikeButton extends Button {
-    constructor(value) {
-        super() 
-        this.btn.innerText = 'Like'
-        this.btn.style.Text = '#000000'
-        this.btn.value = value
-       
-        
+    constructor(btn, likes = 0) {
+        super(btn) 
+        this.likes = likes
+        this.btn.innerText = 'Likes'
+        this.btn.addEventListener('click', this.like.bind(this)) 
     }
    
-
     like() {
-      this.btn.value = 0
-       this.btn.value ++
-        console.log(`Ammount of clicks is ${this.btn.value}`)
-       //render()      
+        this.likes ++
+        //this.render()
+        this.btn.innerHTML = `Likes: ${this.likes}`
+        console.log(this.likes)       
     }
- 
+
+    /*
+    render() {}
+   */
 }
 
 class CountDownButton extends Button {
-    constructor() {
-        super() 
-        this.btn.id = 'count'
+    constructor(btn, count = 10 ) {
+        super(btn) 
+        this.__count = count
         this.btn.innerText = 'Count down'
-        this.btn.style.Text = '#00ccaa'
-        //this.btn.addEventListener('click', start)
+        this.btn.disables = true
+        this.btn.addEventListener('click', this.start.bind(this)) 
+    }
+
+    set count(value) {
+        if(value > 0) {
+            this.__count = value   
+        } else {
+            alert('STOP COUNTER!')
+        }
+    }
+
+    get count() {
+        return this.__count
     }
 
     start() {
-
-    }
+        setInterval(() => {
+         this.count --
+         this.btn.innerHTML = `Count down: ${this.count}`}, 1000)
+        }
+    
+    
+    /*
+    render() { }
+    */
 }
 
-let a = new LikeButton()
+let btn1 = new LikeButton()
+btn1.render(document.body)
 
-a.render(document.body)
+let btn2 = new CountDownButton()
+btn2.render(document.body)
 
-
-let b = new CountDownButton()
-b.render(document.body)
 
