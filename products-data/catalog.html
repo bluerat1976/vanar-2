@@ -3,7 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Catalog</title>
-    
+    <style>
+        #products-grid {
+            display: flex;  
+            flex-flow: row wrap;
+            border: 1px solid #5a5d61;
+            margin: 20px;
+            padding: 20px;
+            background-color: #c5c5c5;
+        }
+
+        #products-grid .name {
+            display: flex;
+            flex-flow: row wrap;
+            flex: 1 1 260px;
+            margin: 10px;
+            padding: 14px;
+            background-color: #ffffff;
+        }
+
+        #products-grid .info {
+            display: block;
+            
+        }
+
+        h2 {
+            display: block;
+            padding: 20px 20px 0 20px;
+            color: #0a2675;  
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            border: 1px solid #6f7175;
+        }
+
+        h3 {
+            display: inline-block;
+            padding: 20px;
+            color:#5c1222 ;
+        }
+    </style>
 </head>
 <body>
    
@@ -11,8 +48,7 @@
 
     </div>
 
-
-
+  
     <script src="js/Product.js"> </script>
     <script src="js/catalog.js"></script>
     

@@ -92,9 +92,24 @@ class Product {
 
     render() {
         let div = document.createElement('div')
+        div.setAttribute('class', 'name')
         div.appendChild(document.createElement('h2'))
         //div > h2
-        div.firstElementChild.innerHTML = this.name + ' ' + this.category + ' ' + this.images + ' ' + parseFloat(this.price.ammount) + ' ' + this.price.currency + ' ' + this.quantity
+        div.firstElementChild.innerHTML = this.name
+
+        let box = document.createElement('div')
+        box.setAttribute('class', 'info')
+        div.appendChild(box)
+        box.appendChild(document.createElement('h3'))
+        box.firstElementChild.innerHTML = this.category
+       
+        let boxcat = document.createElement('div')
+        box.appendChild(boxcat)
+        let img = document.createElement('img')
+        img.setAttribute('src', 'images/smartphone-3.png')
+        box.appendChild(img)
+      
+        boxcat.innerHTML = `${this.images} --- Price: ${parseFloat(this.price.ammount)}  ${this.price.currency} --- Cuantity: ${this.quantity}`
         return div
     }
 }
