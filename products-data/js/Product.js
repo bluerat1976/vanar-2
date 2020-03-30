@@ -105,11 +105,11 @@ class Product {
        
         let boxcat = document.createElement('div')
         box.appendChild(boxcat)
-        let img = document.createElement('img')
-        img.setAttribute('src', 'images/smartphone-3.png')
-        box.appendChild(img)
-      
-        boxcat.innerHTML = `${this.images} --- Price: ${parseFloat(this.price.ammount)}  ${this.price.currency} --- Cuantity: ${this.quantity}`
+        //let img = document.createElement('img')
+        //img.setAttribute('src', 'images/smartphone-3.png')
+        //img.setAttribute('class', 'img')
+        //box.appendChild(img)
+        boxcat.innerHTML = `${this.images = `src= ${this.tmages[0]}`} --- Price: ${parseFloat(this.price.ammount)}  ${this.price.currency} --- Cuantity: ${this.quantity}`
         return div
     }
 }
