@@ -60,7 +60,7 @@ class Product {
 
     set price(value) {
         if(Object.keys(price) == ['ammount', 'currency']) {
-            this.price = value
+            this.__price = value
             //this.currency = currency
             
         } else {
@@ -95,21 +95,32 @@ class Product {
         div.setAttribute('class', 'name')
         div.appendChild(document.createElement('h2'))
         //div > h2
-        div.firstElementChild.innerHTML = this.name
+        div.firstElementChild.innerHTML = this.name 
 
-        let box = document.createElement('div')
-        box.setAttribute('class', 'info')
-        div.appendChild(box)
-        box.appendChild(document.createElement('h3'))
-        box.firstElementChild.innerHTML = this.category
-       
         let boxcat = document.createElement('div')
-        box.appendChild(boxcat)
-        //let img = document.createElement('img')
-        //img.setAttribute('src', 'images/smartphone-3.png')
-        //img.setAttribute('class', 'img')
-        //box.appendChild(img)
-        boxcat.innerHTML = `${this.images = `src= ${this.tmages[0]}`} --- Price: ${parseFloat(this.price.ammount)}  ${this.price.currency} --- Cuantity: ${this.quantity}`
+        boxcat.setAttribute('class', 'category')
+        div.appendChild(boxcat)
+        boxcat.appendChild(document.createElement('h3'))
+        
+        boxcat.firstElementChild.innerHTML = this.category
+
+        let boxpict = document.createElement('div')
+        boxpict.setAttribute('class', 'pictures')
+        boxcat.appendChild(boxpict)
+        
+        for(let i=0; i< this.images.length; i++) {
+            let img = document.createElement('img')
+            img.setAttribute('src', this.images[i])
+            img.setAttribute('class', 'img')
+            boxpict.appendChild(img)
+        }
+
+        let boxinfo = document.createElement('div')
+        boxinfo.setAttribute('class', 'info')
+        boxcat.appendChild(boxinfo)
+       
+        boxinfo.innerHTML = `Price: ${parseFloat(this.price.ammount)}  ${this.price.currency}` +'<br>'+`Qty: ${this.quantity}`
         return div
     }
 }
+

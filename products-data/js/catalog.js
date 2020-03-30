@@ -1,11 +1,34 @@
 
 let products = [
-    new Product('iPhone', 'Smartphones',['images/smartphone-1.jpg', 'https://avatars.mds.yandex.net/get-pdb/163339/7afecea5-145c-474f-9c20-6a2776b9b112/s375', '*'], 100.99, 'EUR', 2),
-    new Product('iPad', 'Tablets', ['*', '*', '*'], 325.59, 'EUR', 1),
-    //new Product('Laptop', 'Notebooks'),
+    new Product(
+        'Landscape', 'Pictures',
+        ['images/summer-5.jpg', 
+        'images/summer-8.jpg', 
+        'images/summer-2.jpg', 
+        'images/summer-4.jpg'
+        ], 
+        189.99, 'EUR', 3),
+
+    new Product('Vase', 'Ceramica', 
+    [
+    'images/vase-7.jpg', 
+    'images/vase-8.jpg', 
+    'images/vase-5.jpg', 
+    'images/vase-9.jpg'
+    ], 
+    242.39, 'EUR', 2),
+    
+    new Product('Statuette', 'Bronze', 
+    [
+    'images/stat-1.jpg', 
+    'images/stat-5.jpg', 
+    'images/stat-3.jpg', 
+    'images/stat-4.jpg'
+    ], 
+    325.59, 'EUR', 1),
+   
 ]
  
-
 
 function renderProductsGrid() {
     let wrapper = document.querySelector('#products-grid')
