@@ -44,7 +44,7 @@ class Product {
 // images property
 
     set images(value) {
-        if(images.isArray(value) == true) {
+        if(Array.isArray(value) == true) {
             this.__images = value
         } else {
             alert('This is not array!')
@@ -59,7 +59,7 @@ class Product {
 // price property
 
     set price(value) {
-        if(Object.keys(price) == ['ammount', 'currency']) {
+        if(Object.keys(value) == ['ammount', 'currency']) {
             this.__price = value
             //this.currency = currency
             

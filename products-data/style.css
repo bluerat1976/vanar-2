@@ -1,0 +1,42 @@
+#products-grid {
+    display: flex;  
+    flex-flow: row wrap;
+    border: 1px solid #5a5d61;
+    margin: 20px;
+    background-color: #c5c5c5;
+    background-image: url(fons/fon-3.jpg);
+}
+
+#products-grid .name {   
+    flex: 1 1 260px;
+    margin: 10px;  
+    background-color: #ffffff;
+    border: 1px solid #61707a;   
+}
+
+#products-grid .category {
+    text-align: center;
+}
+
+#products-grid .category .info {
+    padding: 6px 20px;
+}
+
+h2 {
+    
+    padding: 4px 4px 4px 20px;
+    color: #274253;  
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+h3 {
+    display: inline-block;
+    color:#5c1222 ;
+}
+
+.img {
+    max-width: 100px;
+    border: 1px solid #808080;
+    margin: 4px;
+}
