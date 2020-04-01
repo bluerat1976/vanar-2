@@ -7,7 +7,7 @@ let products = [
         'images/summer-2.jpg', 
         'images/summer-4.jpg'
         ], 
-        189.99, 'EUR', 3),
+        188.99, 'EUR', 3),
 
     new Product('Vase', 'Ceramica', 
         [
@@ -38,4 +38,4 @@ function renderProductsGrid() {
     )    
 }
 
-renderProductsGrid('#products-grid')
+//renderProductsGrid('#products-grid')
