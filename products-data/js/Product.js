@@ -71,26 +71,26 @@ class Product {
 
     set ammount(value) {
         if(typeof value == 'number') {
-            this.__ammount = value
+            this.__price.ammount = value
         } else {
             alert('This is not an ammount')
         }
     }
 
     get ammount() {
-        return this.__ammount
+        return this.__price.ammount
     }
 
     set currency(value) {
         if( typeof value == 'string') {
-            this.__currency = value
+            this.__price.currency = value
         } else {
             alert('This is not a right currency')
         }
     }
 
     get currency() {
-        return this.__currency
+        return this.__price.currency
     }
 
 //--------------------------------------
