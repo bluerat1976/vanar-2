@@ -70,7 +70,7 @@ class Product {
     }
 
     set ammount(value) {
-        if(typeof value == Number) {
+        if(typeof value == 'number') {
             this.__ammount = value
         } else {
             alert('This is not an ammount')
