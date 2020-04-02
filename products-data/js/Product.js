@@ -1,15 +1,15 @@
 //Module
 
 class Product {
-    constructor( name, category, images, ammount, currency, quantity) {
+    constructor(id, name, category, images, price, quantity) {
+        this.id = id  //HW: set / get -> number
         this.name = name
         this.category = category // string
         this.images = images // []
         // price  {ammount: 100.00, currency: 'EUR'}
-        this.price = {
-           'ammount': this.ammount,
-           'currency': this.currency,
-        }  
+        //this.__price = {}
+        this.__price = {}
+        this.price = price 
         this.quantity = quantity // number (integer)
     }
 
@@ -57,12 +57,20 @@ class Product {
 
 //--------------------------------------
 // price property
-
-    set price(value) {
+        //{
+        //'ammount': this.ammount,
+        // 'currency': this.currency,
+        //}  
+    set price(value) {      
+        
         if(Object.keys(value).includes ('ammount') && Object.keys(value).includes('currency')) {
-            this.__price = value    
+            //this.__price = value 
+            
+            // HW: ES6+  destructuring / expanding
+            this.ammount = value.ammount
+            this.currency = value.currency  
         } else {
-            alert('Tomething is missing!')
+            alert('Something is missing!')
         }
     }   
     get price() {
@@ -70,6 +78,7 @@ class Product {
     }
 
     set ammount(value) {
+        console.log(this.__price)
         if(typeof value == 'number') {
             this.__price.ammount = value
         } else {
@@ -113,7 +122,10 @@ class Product {
 
     render() {
         let div = document.createElement('div')
-        div.setAttribute('class', 'name')
+        // div.setAttribute('class', 'product')
+        div.classList.add('product')
+        div.classList.add('p-' + this.id)
+
         div.appendChild(document.createElement('h2'))
         //div > h2
         div.firstElementChild.innerHTML = this.name 
