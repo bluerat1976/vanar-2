@@ -42,7 +42,7 @@ function renderProductsGrid() {
         product => {
             wrapper.appendChild(product.render()) 
             
-               $(`.p-${product.id}.pictures`).addClass('owl-carousel').owlCarousel();
+               $(`.p-${product.id} .pictures`).addClass('owl-carousel').owlCarousel();
               
         } 
     )    
