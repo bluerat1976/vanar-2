@@ -52,6 +52,8 @@ function renderProductsGrid() {
                 
             });
 
+            $(`.p-${product.id} .pictures .owl-dots .owl-dot`).append('<img style="width:50px" src="images/summer-5.jpg"; />');
+
         
         } 
     )    
