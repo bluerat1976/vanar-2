@@ -1,21 +1,18 @@
-#products-grid {
-    display: flex;  
-    flex-flow: row wrap;
-    border: 1px solid #5a5d61;
-    margin: 20px;
+.container {
     background-color: #c5c5c5;
     background-image: url(fons/fon-3.jpg);
-}
+ }
 
 #products-grid .product {   
-    flex: 1 1 260px;
-    margin: 10px;  
+    padding: 14px;
+    margin-top: 20px;
     background-color: #ffffff;
     border: 1px solid #61707a;   
 }
 
 #products-grid .category {
     text-align: center;
+
 }
 
 #products-grid .category .info {
@@ -35,9 +32,19 @@ h3 {
     color:#5c1222 ;
 }
 
-.img {
-    
-    border: 1px solid #808080;
-    margin: 4px;
+img {
+    max-width: 96%;
+    border: 1px solid #707070;
 }
+
+.container {
+    max-width: 96%;
+}
+
+.owl-nav .owl-prev span,
+.owl-nav .owl-next span {
+    font-size: 42px;
+    margin: 10px;
+}
+
 

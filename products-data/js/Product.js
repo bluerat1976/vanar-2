@@ -123,7 +123,7 @@ class Product {
     render() {
         let div = document.createElement('div')
         // div.setAttribute('class', 'product')
-        div.classList.add('product')
+        div.classList.add('product', 'col-lg-4', 'col-sm-6')
         div.classList.add('p-' + this.id)
 
         div.appendChild(document.createElement('h2'))
@@ -146,8 +146,9 @@ class Product {
             let img = document.createElement('img')
             img.setAttribute('src', this.images[i])
             img.setAttribute('class', 'img')
-            img.setAttribute('style', 'width')
-            img.style.width = '100px'
+            //img.setAttribute('class', 'owl-lazy')
+            //img.setAttribute('style', 'width')
+            //img.style.width = '100px'
             boxpict.appendChild(img) 
         }
 

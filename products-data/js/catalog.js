@@ -30,8 +30,7 @@ let products = [
         'images/stat-3.jpg', 
         'images/stat-4.jpg'
         ], 
-        {ammount: 325.59, currency: 'EUR'}, 1),
-   
+        {ammount: 325.59, currency: 'EUR'}, 1),  
 ]
  
 
@@ -42,7 +41,14 @@ function renderProductsGrid() {
         product => {
             wrapper.appendChild(product.render()) 
             
-               $(`.p-${product.id} .pictures`).addClass('owl-carousel').owlCarousel();
+               $(`.p-${product.id} .pictures`).addClass('owl-carousel').owlCarousel({
+                center: true,
+                items: 3,
+                loop:true,
+                
+                nav:true, 
+                
+        });
               
         } 
     )    
