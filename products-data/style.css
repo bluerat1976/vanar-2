@@ -4,16 +4,14 @@
  }
 
 #products-grid .product {   
-    padding: 14px;
+    padding: 26px;
     margin-top: 20px;
     background-color: #ffffff;
-    border: 1px solid #61707a;   
+    border: 1px solid #61707a;
+    text-align: center; 
 }
 
-#products-grid .category {
-    text-align: center;
 
-}
 
 #products-grid .category .info {
     padding: 6px 20px;
@@ -21,7 +19,7 @@
 
 h2 {
     
-    padding: 4px 4px 4px 20px;
+    padding: 4px;
     color: #274253;  
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
@@ -33,13 +31,16 @@ h3 {
 }
 
 img {
-    max-width: 96%;
+    max-width: 100%;
     border: 1px solid #707070;
 }
 
 .container {
-    max-width: 96%;
+    max-width: 94%;
 }
+
+
+
 
 .owl-nav .owl-prev span,
 .owl-nav .owl-next span {

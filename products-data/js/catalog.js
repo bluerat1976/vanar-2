@@ -40,16 +40,19 @@ function renderProductsGrid() {
     products.forEach( 
         product => {
             wrapper.appendChild(product.render()) 
+
+            $('.product').addClass('col-lg-4').addClass('col-sm-6')
             
-               $(`.p-${product.id} .pictures`).addClass('owl-carousel').owlCarousel({
+            $(`.p-${product.id} .pictures`).addClass('owl-carousel').addClass('owl-theme').owlCarousel({
                 center: true,
-                items: 3,
+                items:1,
+                lazyLoad:true,
                 loop:true,
-                
                 nav:true, 
                 
-        });
-              
+            });
+
+        
         } 
     )    
 }
