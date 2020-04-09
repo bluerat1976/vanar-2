@@ -1,6 +1,8 @@
 .container {
     background-color: #c5c5c5;
     background-image: url(fons/fon-3.jpg);
+    max-width: 94%;
+    line-height: 1;
  }
 
 #products-grid .product {   
@@ -31,21 +33,46 @@ h3 {
 }
 
 img {
+   
     max-width: 100%;
     border: 1px solid #707070;
 }
 
-.container {
-    max-width: 94%;
+.category {
+    position: relative;
 }
 
 
+ .owl-nav .owl-prev,
+ .owl-nav .owl-next {
+    position: absolute;
+    margin-top: -10px !important;
+    top: 36%;
+    background-color: #aaaaaa !important;
+    font-size: 38px !important;   
+}
 
+.picture {
+    padding: 3px !important;
+}
 
 .owl-nav .owl-prev span,
 .owl-nav .owl-next span {
-    font-size: 42px;
-    margin: 10px;
+    padding: 4px !important;
 }
 
+.owl-nav .owl-prev {
+    left: 0 !important ;
+}
 
+.owl-nav .owl-next{
+    left: 92% !important;
+    
+}
+
+.btn-buy{
+    margin-top: 10px;
+    padding: 8px;
+    color: #ffffff;
+    background: linear-gradient(#0877af, #003058);
+}

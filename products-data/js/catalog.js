@@ -52,10 +52,35 @@ function renderProductsGrid() {
                 
             });
 
-            $(`.p-${product.id} .pictures .owl-dots .owl-dot`).append('<img style="width:50px" src="images/summer-5.jpg"; />');
-
+            //$(`.p-${product.id} .pictures .owl-dots .owl-dot`).append(`<img style="width:50px" src="images/${this.images}";/>`);
         
-        } 
+            let dot = $(`.p-${product.id} .pictures .owl-dots .owl-dot`) 
+            
+            for(let j = 0; j<dot.length; j++) {
+                let dimg = document.createElement('img')
+                dimg.setAttribute('style','width')
+                dimg.style.width = '50px'
+                dimg.setAttribute('src', product.images[j])
+                dot[j].appendChild(dimg)
+            } 
+
+            
+            
+            let btnArr = document.getElementsByClassName('btn-buy')
+            
+            for(let n = 0; n<btnArr.length; n++ ) {
+                btnArr[n].addEventListener('click', addToCart)  
+                
+                } 
+                
+                function addToCart() {
+                    alert(`Product ID: ${product.id}`)
+                
+                }
+
+                 
+        }
+ 
     )    
 }
 

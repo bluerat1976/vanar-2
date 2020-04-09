@@ -141,7 +141,7 @@ class Product {
         boxpict.setAttribute('class', 'pictures')
         boxcat.appendChild(boxpict)
        
-       
+        
         for(let i=0; i< this.images.length; i++) {
             let img = document.createElement('img')
             img.setAttribute('src', this.images[i])
@@ -149,18 +149,32 @@ class Product {
             img.setAttribute('class', 'img')
             //img.setAttribute('style', 'width')
             //img.style.width = '100px'
-            boxpict.appendChild(img) 
+            
+            boxpict.appendChild(img)   
         }
-
-       
+   
         let boxinfo = document.createElement('div')
         boxinfo.setAttribute('class', 'info')
         boxcat.appendChild(boxinfo)
        
         boxinfo.innerHTML = `Price: ${parseFloat(this.price.ammount)}  ${this.price.currency}` +'<br>'+`Qty: ${this.quantity}`
+        
+       
+        let btnBuy = document.createElement('button')
+        btnBuy.setAttribute('class', 'btn-buy')
+        btnBuy.setAttribute('type', 'submit')
+        btnBuy.innerHTML = 'Add to cart'
+        div.appendChild(btnBuy)
+       
+       /* 
+        btnBuy.onclick = addToCart 
+        
+        function addToCart() { 
+            alert(`Product ID: ${this.id}`)
+       } 
+       */
+
         return div
     }
-
-
 }
 
