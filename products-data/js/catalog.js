@@ -64,23 +64,34 @@ function renderProductsGrid() {
                 dot[j].appendChild(dimg)
             } 
 
-            
-            
+            let s = $(`.p-${product.id}`)
+            let btnBuy = document.createElement('button')
+            for(let n = 0; n<s.length; n++) {
+                
+                btnBuy.setAttribute('class', 'btn-buy')
+                btnBuy.setAttribute('type', 'submit')
+                btnBuy.innerHTML = 'Add to cart'
+                s[n].appendChild(btnBuy)
+            }
+
+            btnBuy.addEventListener('click', addToCart)  
+            function addToCart() {
+                alert('Product ID: '+ product.id)
+            } 
+
+
+            /*
             let btnArr = document.getElementsByClassName('btn-buy')
             
             for(let n = 0; n<btnArr.length; n++ ) {
-                btnArr[n].addEventListener('click', addToCart)  
+                btnArr[n].addEventListener('click', addToCart)    
+            } 
                 
-                } 
-                
-                function addToCart() {
-                    alert(`Product ID: ${product.id}`)
-                
-                }
-
-                 
-        }
- 
+            function addToCart() {
+                alert('Product ID:'+ product.id)
+            } 
+           */
+        } 
     )    
 }
 
