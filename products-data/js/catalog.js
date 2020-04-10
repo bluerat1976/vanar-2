@@ -64,8 +64,6 @@ function renderProductsGrid() {
                 dot[j].appendChild(dimg)
             } 
 
-
-        /*
             let s = $(`.p-${product.id}`)
             let btnBuy = document.createElement('button')
             for(let n = 0; n<s.length; n++) {
@@ -80,20 +78,13 @@ function renderProductsGrid() {
             function addToCart() {
                 alert('Product ID: '+ product.id)
             } 
-        */  
-
-        /*  
-            $(`.p-${product.id}`).append('<button class="btn-buy" type="submit"> Add to cart</button>')
-            $(`.p-${product.id} .btn-buy`).bind('click',function() {
-                alert('Product ID: '+ product.id)})
-        */
-
-                
+              
+    
+          /*
            $(`.p-${product.id}`).append('<button class="btn-buy" type="submit"> Add to cart</button>')
-           //$(`.p-${product.id} .btn-buy`).attr('type', 'submit')
-           $(`.p-${product.id} .btn-buy`).on('click',function() {
-            alert('Product ID: '+ product.id)})
-            
+           $(`.p-${product.id} .btn-buy`).on('click',function() { alert('Product ID: '+ product.id) })
+          */
+
         } 
     )    
 }

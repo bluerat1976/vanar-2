@@ -159,21 +159,21 @@ class Product {
        
         boxinfo.innerHTML = `Price: ${parseFloat(this.price.ammount)}  ${this.price.currency}` +'<br>'+`Qty: ${this.quantity}`
        
-       /*
-        let btnBuy = document.createElement('button')
+        /*
+        let btnBuy = document.createElement('button')    
         btnBuy.setAttribute('class', 'btn-buy')
         btnBuy.setAttribute('type', 'submit')
         btnBuy.innerHTML = 'Add to cart'
         div.appendChild(btnBuy)
-       */
-      
-       /*
-        btnBuy.onclick = addToCart 
-        
+
+        btnBuy.addEventListener('click', addToCart)
+       
         function addToCart() { 
-            alert(`Product ID: ${this.id}`)
-        } 
+           
+               alert('Product ID: ' + products.Product.id)
+       } 
        */
+
         return div
     }
 }
