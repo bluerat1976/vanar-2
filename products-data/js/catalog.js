@@ -52,7 +52,7 @@ function renderProductsGrid() {
                 
             });
 
-            //$(`.p-${product.id} .pictures .owl-dots .owl-dot`).append(`<img style="width:50px" src="images/${this.images}";/>`);
+            //$(`.p-${product.id} .pictures .owl-dots .owl-dot`).append(`<img style="width:50px" src="images/${product.images}";/>`);
         
             let dot = $(`.p-${product.id} .pictures .owl-dots .owl-dot`) 
             
@@ -64,6 +64,8 @@ function renderProductsGrid() {
                 dot[j].appendChild(dimg)
             } 
 
+
+        /*
             let s = $(`.p-${product.id}`)
             let btnBuy = document.createElement('button')
             for(let n = 0; n<s.length; n++) {
@@ -73,24 +75,25 @@ function renderProductsGrid() {
                 btnBuy.innerHTML = 'Add to cart'
                 s[n].appendChild(btnBuy)
             }
-
-            btnBuy.addEventListener('click', addToCart)  
+ 
+            btnBuy.addEventListener('click',addToCart)  
             function addToCart() {
                 alert('Product ID: '+ product.id)
             } 
+        */  
 
+        /*  
+            $(`.p-${product.id}`).append('<button class="btn-buy" type="submit"> Add to cart</button>')
+            $(`.p-${product.id} .btn-buy`).bind('click',function() {
+                alert('Product ID: '+ product.id)})
+        */
 
-            /*
-            let btnArr = document.getElementsByClassName('btn-buy')
-            
-            for(let n = 0; n<btnArr.length; n++ ) {
-                btnArr[n].addEventListener('click', addToCart)    
-            } 
                 
-            function addToCart() {
-                alert('Product ID:'+ product.id)
-            } 
-           */
+           $(`.p-${product.id}`).append('<button class="btn-buy" type="submit"> Add to cart</button>')
+           //$(`.p-${product.id} .btn-buy`).attr('type', 'submit')
+           $(`.p-${product.id} .btn-buy`).on('click',function() {
+            alert('Product ID: '+ product.id)})
+            
         } 
     )    
 }
