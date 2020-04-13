@@ -5,6 +5,16 @@
     line-height: 1;
  }
 
+ #header {
+    height: 100px;
+    border: 1px solid #cccccc;
+ }
+
+ .dropdown {
+     border: 1px solid #003058;
+     height: 96px;
+ }
+
 #products-grid .product {   
     padding: 26px;
     margin-top: 20px;
@@ -12,8 +22,6 @@
     border: 1px solid #61707a;
     text-align: center; 
 }
-
-
 
 #products-grid .category .info {
     padding: 6px 20px;

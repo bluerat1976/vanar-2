@@ -75,15 +75,46 @@ function renderProductsGrid() {
             }
  
             btnBuy.addEventListener('click',addToCart)  
+            
             function addToCart() {
-                alert('Product ID: '+ product.id)
-            } 
+                //alert('Product ID: '+ product.id)
+                //alert(product.id)
+                let idProd = product.id
+                
+                
+                    if(idProd ==100) {
+                        p = products[0]
+                        //let p1 = (products[0].id + ' ' + products[0].name + ' ' + products[0].currency + ' ' + products[0].images[0] ) 
+                        //alert(p)
+                   
+                    } if(idProd == 101) {
+                        p = products[1].name
+                       //let p2 = (products[1].id + ' ' + products[1].name + ' ' + products[1].currency + ' ' + products[1].images[0] ) 
+                       //alert(p)
+                        
+                    } if(idProd == 102) {
+                        p = products[2].name
+                        //let p3 = (products[2].id + ' ' + products[2].name + ' ' + products[2].currency + ' ' + products[2].images[0] ) 
+                       // alert(p)
+                    }
+                    
+                    alert('Product: ' + p )
+                    
+                   // let p1 = p
+ 
+                   // c1.addToCart(p1)
+
+                }
+
+               //return product.id
+
+             
               
     
-          /*
+         /*
            $(`.p-${product.id}`).append('<button class="btn-buy" type="submit"> Add to cart</button>')
            $(`.p-${product.id} .btn-buy`).on('click',function() { alert('Product ID: '+ product.id) })
-          */
+         */
 
         } 
     )    
