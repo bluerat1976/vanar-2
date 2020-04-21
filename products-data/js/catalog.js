@@ -8,7 +8,7 @@ let products = [
         'images/summer-2.jpg', 
         'images/summer-4.jpg'
         ], 
-        {ammount: 188.99, currency:'EUR'}, 3),
+        {ammount: 188.99, currency:'EUR'}, 1),
 
     new Product(
         101,
@@ -19,7 +19,7 @@ let products = [
         'images/vase-5.jpg', 
         'images/vase-9.jpg'
         ], 
-        {ammount: 242.39, currency:'EUR'}, 2),
+        {ammount: 242.39, currency:'EUR'}, 1),
     
     new Product(
         102,
@@ -64,6 +64,7 @@ function renderProductsGrid() {
                 dot[j].appendChild(dimg)
             } 
 
+             // WORKS!!! -->>--------------------------------------------
             let s = $(`.p-${product.id}`)
             let btnBuy = document.createElement('button')
             for(let n = 0; n<s.length; n++) {
@@ -73,50 +74,86 @@ function renderProductsGrid() {
                 btnBuy.innerHTML = 'Add to cart'
                 s[n].appendChild(btnBuy)
             }
- 
-            btnBuy.addEventListener('click',addToCart)  
             
+
+
+            btnBuy.addEventListener('click', addToCart)  
+           
+            
+           // let cart = document.querySelector('') 
+           
+            //cart.innerHTML = 'hello'
+
+/*
+            let divCart = document.createElement('div')
+      divCart.setAttribute('class', 'dropdown')
+
+      let btnCart = document.createElement('button')
+      btnCart.classList.add('btn', 'btn-primary','dropdown-toggle')
+      btnCart.setAttribute('type', 'button')
+      btnCart.setAttribute('id', 'dropdownMenu1')
+      btnCart.setAttribute('data-toggle', 'dropdown')
+      btnCart.setAttribute('aria-haspopup', true)
+      btnCart.setAttribute('aria-expanded', false)
+      btnCart.innerHTML = 'Cart'
+      divCart.appendChild(btnCart)
+      
+     
+
+      let cartMenu = document.createElement('div')
+      cartMenu.classList.add('dropdown-menu', 'dropdown-primary')
+*/
+      
+      
+//-------------------------------------------------------------
+
+
             function addToCart() {
                 //alert('Product ID: '+ product.id)
                 //alert(product.id)
+              
                 let idProd = product.id
-                
-                
-                    if(idProd ==100) {
-                        p = products[0]
+                //let dropItem = document.querySelector('.dropdown-item')
+                //let item = document.createElement('p');
+                let p;   
+                if(idProd ==100) {
+                        //p = products[0].name
+                        p = products[0].id + ' ' + products[0].name + ' ' + products[0].ammount + ' ' + products[0].currency + ' ' + products[0].images[0]  
                         //let p1 = (products[0].id + ' ' + products[0].name + ' ' + products[0].currency + ' ' + products[0].images[0] ) 
+                        
                         //alert(p)
                    
                     } if(idProd == 101) {
-                        p = products[1].name
+                        p = products[1].id + ' ' + products[1].name + ' ' + products[1].ammount + ' ' + products[1].currency + ' ' + products[1].images[0]  
                        //let p2 = (products[1].id + ' ' + products[1].name + ' ' + products[1].currency + ' ' + products[1].images[0] ) 
                        //alert(p)
                         
                     } if(idProd == 102) {
-                        p = products[2].name
+                        p = products[2].id + ' ' + products[2].name + ' ' + products[2].ammount + ' ' + products[2].currency + ' ' + products[2].images[0]  
                         //let p3 = (products[2].id + ' ' + products[2].name + ' ' + products[2].currency + ' ' + products[2].images[0] ) 
                        // alert(p)
                     }
                     
                     alert('Product: ' + p )
+
+                    $( '.dropdown-menu').append(`<a class="dropdown-item" href="#">${p}</a>`)
                     
                    // let p1 = p
  
                    // c1.addToCart(p1)
-
+                    
                 }
 
-               //return product.id
+                
+             //--<< WORKS!!!------------------------------------------------------
 
-             
-              
-    
-         /*
-           $(`.p-${product.id}`).append('<button class="btn-buy" type="submit"> Add to cart</button>')
-           $(`.p-${product.id} .btn-buy`).on('click',function() { alert('Product ID: '+ product.id) })
+        
+          /*  
+          $(`.p-${product.id}`).append('<button class="btn-buy" type="submit"> Add to cart</button>')
+          $(`.p-${product.id} .btn-buy`).on('click',function() { alert('Product ID: '+ product.id) })
          */
-
-        } 
+            }
+        
     )    
 }
 

@@ -84,3 +84,9 @@ img {
     color: #ffffff;
     background: linear-gradient(#0877af, #003058);
 }
+
+.dropdown-menu {
+    width: 300px !important;
+    height: 300px !important;
+    background-color: #274253 !important;
+}

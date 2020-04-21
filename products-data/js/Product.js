@@ -117,7 +117,6 @@ class Product {
         return this.__quantity
     }
 
-
     // function that renders this product
 
     render() {
@@ -157,7 +156,7 @@ class Product {
         boxinfo.setAttribute('class', 'info')
         boxcat.appendChild(boxinfo)
        
-        boxinfo.innerHTML = `Price: ${parseFloat(this.price.ammount)}  ${this.price.currency}` +'<br>'+`Qty: ${this.quantity}`
+        boxinfo.innerHTML = `Price:<span> ${parseFloat(this.price.ammount)}  ${this.price.currency}</span>` +'<br>'+`Qty: <span>${this.quantity}</span>`
        
         /*
         let btnBuy = document.createElement('button')    
@@ -174,6 +173,7 @@ class Product {
        } 
        */
 
+     
         return div
     }
 }
