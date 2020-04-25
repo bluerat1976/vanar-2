@@ -1,5 +1,4 @@
-
-
+/*
 class Cart {
     constructor() {
         this.item = []
@@ -63,46 +62,33 @@ function renderCart() {
 }
 
 renderCart('header')
-
+*/
 
 //-------------------------------------------------------------------
 //-------------------------------------------------------------------
 
-/*
 
 let items = document.querySelector('.row')
-let cartItems = document.querySelector('.dropdown-menu')
+let CartContent = document.querySelector('#cart-content')
 
 loadEventListeners();
 
-function loadEventListeners() {
-    //when new item is added
-    items.addEventListener('click', buyItem); 
-    
-    function buyItem(e) {
-        if (e.target.classList.contains('btn-buy')) {
-            //read the item value
-            const item = e.target.parentElement;
-            getItemInfo(item);
-        }
-    }
-}
 
 function getItemInfo(item) {
-   
-    //create an Object with item data
+   //create an Object with course data
     let itemInfo = {
         image: item.querySelector('img').src,
         name: item.querySelector('h2').textContent,
         price: item.querySelector('.info').textContent,
-        //ammount: item.querySelector('.item_price + span').textContent,
-        //id: item.querySelector('.cart a').getAttribute('data-id'),
-        //quantity: item.querySelector('.item_price + span + span')
+        ammount: item.querySelector('.info').textContent,
+        id: item.querySelector('.product  .btn-buy').getAttribute('id'),
+        //quantity: item.querySelector('.info + span + span')
     }
-
 
     addToCart(itemInfo);
 }
+
+//---------fix-->>------------------------
 
 let shoppingCart = (function () {
 
@@ -122,12 +108,13 @@ let obj = {}
 
 })();
 
+//--------<<--fix---------------------
+
 function addToCart(item) {
     let row = document.createElement('tr');
 
     row.innerHTML = `
-    <table>
-<tr>
+
     <td>
         <img src="${item.image}" width="100">    
     </td>   
@@ -138,33 +125,15 @@ function addToCart(item) {
         ${item.price}
     </td>
      <td>
-        <a href="#" class="remove" data-id="${item.id}">X</a>
+        <a href="#" class="remove" data_id="${item.id}">X</a>
     </td>
-</tr>
-</table>
+
 `
-
-    let t = document.getElementById('total')
-    let h = document.createElement('h3')
-    t.appendChild(h)
-    $('#total h3').html(shoppingCart.totalCart());
-
-
-    // let t = document.getElementById('total')
-    // let h = document.createElement('h3')
-    // h.classList.add('total')
-    // h.innerHTML = `<div> 
-    // ${total}
-    // </div>
-    // `
-    // t.appendChild(h)
-        
-
-    cartItems.appendChild(row);
+   CartContent.appendChild(row);
 }
 
 
-/*
+
 // shoppingCartContent = document.querySelector('#cart-content tbody')
 // clearCartBtn = document.querySelector('#clear-cart')
 // loadEventListeners();
@@ -175,26 +144,25 @@ function loadEventListeners() {
 
     function buyItem(e) {
         if (e.target.classList.contains('btn-buy')) {
-            //read the item value
-            const item = e.target.parentElement
+            //read the course value
+            const item = e.target.parentElement;
             getItemInfo(item);
         }
     }
 
-    cartItems.addEventListener('click', removeItem);
+    CartContent.addEventListener('click', removeItem);
     document.querySelector('#clear-cart').addEventListener('click', clearCart);
 }
 
 function removeItem(e) {
     if (e.target.classList.contains('remove')) {
-        e.target.parentElement.remove();
+        e.target.parentElement.parentElement.remove();
     }
 }
 
 function clearCart() {
-    console.log(cartItems.firstChild)
-    while (cartItems.firstChild) {
-        cartItems.removeChild(cartItems.firstChild);
+   // console.log(CartContent.firstChild)
+    while (CartContent.firstChild) {
+        CartContent.removeChild(CartContent.firstChild);
     }
 }
-*/

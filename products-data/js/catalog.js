@@ -8,7 +8,8 @@ let products = [
         'images/summer-2.jpg', 
         'images/summer-4.jpg'
         ], 
-        {ammount: 188.99, currency:'EUR'}, 1),
+        {ammount: 188.99, currency:'EUR'},
+        1,),
 
     new Product(
         101,
@@ -19,7 +20,8 @@ let products = [
         'images/vase-5.jpg', 
         'images/vase-9.jpg'
         ], 
-        {ammount: 242.39, currency:'EUR'}, 1),
+        {ammount: 242.39, currency:'EUR'},
+        1,),
     
     new Product(
         102,
@@ -30,7 +32,8 @@ let products = [
         'images/stat-3.jpg', 
         'images/stat-4.jpg'
         ], 
-        {ammount: 325.59, currency: 'EUR'}, 1),  
+        {ammount: 325.59, currency: 'EUR'},
+        1,),  
 ]
  
 
@@ -70,6 +73,7 @@ function renderProductsGrid() {
             for(let n = 0; n<s.length; n++) {
                 
                 btnBuy.setAttribute('class', 'btn-buy')
+                btnBuy.setAttribute('id', `${product.id}`)
                 btnBuy.setAttribute('type', 'submit')
                 btnBuy.innerHTML = 'Add to cart'
                 s[n].appendChild(btnBuy)
@@ -107,7 +111,7 @@ function renderProductsGrid() {
       
 //-------------------------------------------------------------
 
-
+/*
             function addToCart() {
                 //alert('Product ID: '+ product.id)
                 //alert(product.id)
@@ -144,7 +148,7 @@ function renderProductsGrid() {
                     
                 }
 
-                
+*/                
              //--<< WORKS!!!------------------------------------------------------
 
         
