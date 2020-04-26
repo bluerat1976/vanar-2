@@ -78,7 +78,7 @@ class Product {
     }
 
     set ammount(value) {
-        console.log(this.__price)
+       //console.log(this.__price)
         if(typeof value == 'number') {
             this.__price.ammount = value
         } else {

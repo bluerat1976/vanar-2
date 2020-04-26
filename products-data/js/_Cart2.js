@@ -1,3 +1,4 @@
+
 class Cart {
     constructor() {
         this.item = []
@@ -64,14 +65,3 @@ function renderCart() {
 }
 
 renderCart('header')
-
-let items = document.querySelector('.btn-buy')
-
-let btn = document.querySelector('.btn-buy')
-for (let i = 0; i < btn.length; )
-
-items.addEventListener('click', itemInfo ) {
-
-}
-
-

@@ -81,7 +81,7 @@ function renderProductsGrid() {
             
 
 
-            btnBuy.addEventListener('click', addToCart)  
+           // btnBuy.addEventListener('click', addToCart)  
            
             
            // let cart = document.querySelector('') 

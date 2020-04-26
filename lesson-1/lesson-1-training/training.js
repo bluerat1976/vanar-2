@@ -37,7 +37,7 @@ let boxCount = document.createElement('div')
 
 function addCounter() {
     
-    weight
+    //
     let btnSum = document.createElement('button')
     btnSum.setAttribute('id', 'btnsum')
     btnSum.innerHTML = 'Summa'
@@ -57,7 +57,7 @@ function addData() {
     // + ', ' + p2.__name + p2.number
 
 }
-   
+   addData()
    
 }
     

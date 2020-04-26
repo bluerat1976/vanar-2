@@ -4,7 +4,7 @@ let items = document.querySelector('.row')
 let CartContent = document.querySelector('#cart-content')
 
 
-let cartOpen = document.querySelector('#img-cart')
+//let cartOpen = document.querySelector('#img-cart')
 //cartOpen.addEventListener('click', loadEventListeners )
 
 loadEventListeners();
@@ -22,20 +22,22 @@ function getItemInfo(item) {
     }
 
     addToCart(itemInfo);
+
 }
 
 function loadEventListeners() {
     //when new course is added
     items.addEventListener('click', buyItem);
-
+   
     function buyItem(e) {
         if (e.target.classList.contains('btn-buy')) {
             //read the course value
             const item = e.target.parentElement;
             getItemInfo(item);
-        }
+            
+        }     
     }
-
+    
     CartContent.addEventListener('click', removeItem);
     document.querySelector('#clear-cart').addEventListener('click', clearCart);
 }
@@ -62,10 +64,13 @@ function addToCart(item) {
      <td>
         <a href="#" class="remove" data_id="${item.id}">X</a>
     </td>
+` 
 
-`
    CartContent.appendChild(row);
+
+   saveCart(item)
 }
+
 
 function removeItem(e) {
     if (e.target.classList.contains('remove')) {
@@ -80,71 +85,4 @@ function clearCart() {
     }
 }
 
-//-----------------------------------------------------------
-//
 
-/*
-class Cart {
-    constructor() {
-        this.item = []
-    }
-
-    get itemCount() {// returns quantity of products
-       // let q = 0;
-        //for(let i = 0; i < q.length; i++){
-        //    q += 1;
-        //}
-       
-        return q      
-    }
-    
-    addProduct( p, q ) {
-        //this.item -> {product: p, quantity: q}
-       
-    
-    }
-    
-    removeProduct( p ) {
-        //this.item <- removes
-    }
-    
-
-    render() {
-    
-        let divCart = document.createElement('div')
-        divCart.setAttribute('class', 'dropdown')
-
-        let btnCart = document.createElement('button')
-        btnCart.classList.add('btn', 'btn-primary')
-        btnCart.setAttribute('type', 'button')
-        btnCart.setAttribute('id', 'dropdownMenu1')
-        btnCart.innerHTML = 'Cart'
-        divCart.appendChild(btnCart)
-        
-        let cartMenu = document.createElement('div')
-        cartMenu.setAttribute('class','dropdown-menu')
-        divCart.appendChild(cartMenu)
-
-       
-        btnCart.addEventListener('click', openCartItems)
-        
-
-        function openCartItems() {
-            let place = document.querySelector('#header')
-            place.appendChild(cartMenu)
-
-        }
-      
-        return divCart
-    }
-}
-
-
-let c1 = new Cart()
-function renderCart() {
-    let wrapper = document.getElementById('header')
-    wrapper.appendChild(c1.render())
-}
-
-renderCart('header')
-*/
