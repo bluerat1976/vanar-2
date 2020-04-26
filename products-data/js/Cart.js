@@ -71,6 +71,10 @@ renderCart('header')
 let items = document.querySelector('.row')
 let CartContent = document.querySelector('#cart-content')
 
+
+let cartOpen = document.querySelector('#img-cart')
+//cartOpen.addEventListener('click', loadEventListeners )
+
 loadEventListeners();
 
 
@@ -88,26 +92,25 @@ function getItemInfo(item) {
     addToCart(itemInfo);
 }
 
-//---------fix-->>------------------------
+function loadEventListeners() {
+    //when new course is added
+    items.addEventListener('click', buyItem);
 
-let shoppingCart = (function () {
-
-cart = [];
-let obj = {}
-
-    // Total cart
-    obj.totalCart = function () {
-        let totalCart = 0;
-        for (let product in cart) {
-            totalCart += cart[product].price * cart[product].quantity;
+    function buyItem(e) {
+        if (e.target.classList.contains('btn-buy')) {
+            //read the course value
+            const item = e.target.parentElement;
+            getItemInfo(item);
         }
-        return Number(totalCart.toFixed(2));
     }
 
-    return obj;
+    CartContent.addEventListener('click', removeItem);
+    document.querySelector('#clear-cart').addEventListener('click', clearCart);
+}
 
-})();
 
+//---------fix-->>------------------------
+// quantity of each product -- ????
 //--------<<--fix---------------------
 
 function addToCart(item) {
@@ -130,28 +133,6 @@ function addToCart(item) {
 
 `
    CartContent.appendChild(row);
-}
-
-
-
-// shoppingCartContent = document.querySelector('#cart-content tbody')
-// clearCartBtn = document.querySelector('#clear-cart')
-// loadEventListeners();
-
-function loadEventListeners() {
-    //when new course is added
-    items.addEventListener('click', buyItem);
-
-    function buyItem(e) {
-        if (e.target.classList.contains('btn-buy')) {
-            //read the course value
-            const item = e.target.parentElement;
-            getItemInfo(item);
-        }
-    }
-
-    CartContent.addEventListener('click', removeItem);
-    document.querySelector('#clear-cart').addEventListener('click', clearCart);
 }
 
 function removeItem(e) {
