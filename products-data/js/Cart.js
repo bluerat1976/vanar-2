@@ -66,10 +66,18 @@ function addToCart(item) {
     </td>
 ` 
 
-   CartContent.appendChild(row);
+    CartContent.appendChild(row);
 
-   saveCart(item)
+    
+ 
+    function saveCart(item) {
+       
+            localStorage.setItem('cart', JSON.stringify(item))
+        }
+
+      saveCart(item)  
 }
+
 
 
 function removeItem(e) {
