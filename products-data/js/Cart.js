@@ -1,71 +1,3 @@
-/*
-class Cart {
-    constructor() {
-        this.item = []
-    }
-
-    get itemCount() {// returns quantity of products
-       // let q = 0;
-        //for(let i = 0; i < q.length; i++){
-        //    q += 1;
-        //}
-       
-        return q      
-    }
-    
-    addProduct( p, q ) {
-        //this.item -> {product: p, quantity: q}
-       
-    
-    }
-    
-    removeProduct( p ) {
-        //this.item <- removes
-    }
-    
-
-    render() {
-    
-        let divCart = document.createElement('div')
-        divCart.setAttribute('class', 'dropdown')
-
-        let btnCart = document.createElement('button')
-        btnCart.classList.add('btn', 'btn-primary')
-        btnCart.setAttribute('type', 'button')
-        btnCart.setAttribute('id', 'dropdownMenu1')
-        btnCart.innerHTML = 'Cart'
-        divCart.appendChild(btnCart)
-        
-        let cartMenu = document.createElement('div')
-        cartMenu.setAttribute('class','dropdown-menu')
-        divCart.appendChild(cartMenu)
-
-       
-        btnCart.addEventListener('click', openCartItems)
-        
-
-        function openCartItems() {
-            let place = document.querySelector('#header')
-            place.appendChild(cartMenu)
-
-        }
-      
-        return divCart
-    }
-}
-
-
-let c1 = new Cart()
-function renderCart() {
-    let wrapper = document.getElementById('header')
-    wrapper.appendChild(c1.render())
-}
-
-renderCart('header')
-*/
-
-//-------------------------------------------------------------------
-//-------------------------------------------------------------------
 
 
 let items = document.querySelector('.row')
@@ -147,3 +79,72 @@ function clearCart() {
         CartContent.removeChild(CartContent.firstChild);
     }
 }
+
+//-----------------------------------------------------------
+//
+
+/*
+class Cart {
+    constructor() {
+        this.item = []
+    }
+
+    get itemCount() {// returns quantity of products
+       // let q = 0;
+        //for(let i = 0; i < q.length; i++){
+        //    q += 1;
+        //}
+       
+        return q      
+    }
+    
+    addProduct( p, q ) {
+        //this.item -> {product: p, quantity: q}
+       
+    
+    }
+    
+    removeProduct( p ) {
+        //this.item <- removes
+    }
+    
+
+    render() {
+    
+        let divCart = document.createElement('div')
+        divCart.setAttribute('class', 'dropdown')
+
+        let btnCart = document.createElement('button')
+        btnCart.classList.add('btn', 'btn-primary')
+        btnCart.setAttribute('type', 'button')
+        btnCart.setAttribute('id', 'dropdownMenu1')
+        btnCart.innerHTML = 'Cart'
+        divCart.appendChild(btnCart)
+        
+        let cartMenu = document.createElement('div')
+        cartMenu.setAttribute('class','dropdown-menu')
+        divCart.appendChild(cartMenu)
+
+       
+        btnCart.addEventListener('click', openCartItems)
+        
+
+        function openCartItems() {
+            let place = document.querySelector('#header')
+            place.appendChild(cartMenu)
+
+        }
+      
+        return divCart
+    }
+}
+
+
+let c1 = new Cart()
+function renderCart() {
+    let wrapper = document.getElementById('header')
+    wrapper.appendChild(c1.render())
+}
+
+renderCart('header')
+*/
