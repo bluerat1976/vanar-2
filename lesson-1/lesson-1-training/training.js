@@ -14,7 +14,6 @@ class Expenses {
     constructor() {
         this.__name = prompt('input name');
         this.number = parseInt(prompt('input number'));
-
     }
 
     set name(value) {
@@ -38,15 +37,15 @@ let boxCount = document.createElement('div')
 function addCounter() {
     
     //
-    let btnSum = document.createElement('button')
-    btnSum.setAttribute('id', 'btnsum')
-    btnSum.innerHTML = 'Summa'
-    boxCount.appendChild(btnSum)
+    // let btnSum = document.createElement('button')
+    // btnSum.setAttribute('id', 'btnsum')
+    // btnSum.innerHTML = 'Summa'
+    // boxCount.appendChild(btnSum)
 
-    let btnAddTotal = document.createElement('button')
-    btnAddTotal.setAttribute('id', 'btnaddtotal')
-    btnAddTotal.innerHTML = 'Add sum to total'
-    boxCount.appendChild(btnAddTotal)
+    // let btnAddTotal = document.createElement('button')
+    // btnAddTotal.setAttribute('id', 'btnaddtotal')
+    // btnAddTotal.innerHTML = 'Add sum to total'
+    // boxCount.appendChild(btnAddTotal)
 
 function addData() {
          let p1 = new Expenses();
