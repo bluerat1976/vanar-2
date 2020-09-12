@@ -48,17 +48,15 @@ function addCounter() {
     // boxCount.appendChild(btnAddTotal)
 
 function addData() {
-         let p1 = new Expenses();
-    //let p2 = new Expenses()
+    let p1 = new Expenses();
     let divRes = document.getElementById('box-2')
     div.appendChild(divRes)
     divRes.innerHTML = p1.__name + ' ' + p1.number
-    // + ', ' + p2.__name + p2.number
+}
 
-}
    addData()
-   
-}
+}  
+
     
     
 
